@@ -1,0 +1,10 @@
+<div class="container"><h1>My movies's lists</h1>
+  <div>
+    <%= link_to "Add a list", new_list_path, class: "btn btn-ghost" %>
+  </div>
+  <% @lists.each do |list|%>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.passeportsante.net/1000x526/2021-02-16/i99748-popcorn-maison.jpeg)">
+     <%= list.name %>
+    </div>
+  <% end %>
+</div>
