@@ -10,11 +10,9 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
-    @movies = Movie.all
   end
 
   def create
-    @movie = Movie.find(params[:movie_id])
     @list = List.new(list_params)
     if @list.save
       redirect_to lists_path

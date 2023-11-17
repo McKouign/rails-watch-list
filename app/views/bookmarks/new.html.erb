@@ -1,9 +1,10 @@
-<div class="container">
-    <h1>Add your bookmark</h1>
-    <%= form_with(model: [@bookmark, @list], url: list_path(@list)) do |form| %>
-    <%= form.label :comment %>
-    <%= form.text_field :comment %>
-    <%= form.submit 'Add a bookmark' %>
+<div class="container"><h1>My new list</h1>
+    <%= form_with(model: @bookmark, url: list_path(@list)) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :movie_id, "Sélectionner un film" %>
+    <%= form.collection_select :movie_id, @movies, :id, :title %>
+    <%= form.submit 'Add the list' %>
   <% end %>
   <%= link_to "Back", lists_path, class: "btn btn-ghost"  %>
 </div>
