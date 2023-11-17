@@ -6,7 +6,7 @@
         <%= image_tag bookmark.movie.poster_url, class: "card-img-top"%>
         <h5 class="card-title"><%= bookmark.movie.title %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= bookmark.comment %></h6>
-        <%= link_to "Delete this bookmark", list_bookmark_path(bookmark), class: "btn btn-ghost", data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}%>
+        <%= link_to "Delete this bookmark", bookmark_path(bookmark), class: "btn btn-ghost", data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}%>
       </div>
     </div>
   <% end %>
